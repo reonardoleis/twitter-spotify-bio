@@ -130,6 +130,7 @@ def verify_currently_playing_and_update_username():
         if not erased:
             change_bio("")
             erased = True
+            currently_playing = ""
             last_played = ""
         return
     
