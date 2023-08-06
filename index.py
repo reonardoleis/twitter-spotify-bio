@@ -73,7 +73,7 @@ def change_bio(playing_now):
             if (playing_now != ""):
                 bio_input.send_keys(Keys.CONTROL + "a")
                 bio_input.send_keys(Keys.DELETE)
-                bio_input.send_keys('| 🎶 Now playing: ' + playing_now + " |\n\n" + user_bio)
+                bio_input.send_keys('「 🎶 Now playing: ' + playing_now + " 」\n\n" + user_bio)
             else:
                 bio_input.send_keys(Keys.CONTROL + "a")
                 bio_input.send_keys(Keys.DELETE)
