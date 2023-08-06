@@ -1,5 +1,5 @@
 # twitter-spotify-bio
-Shows Spotify's "playing now" on Twitter bio.
+Script to show Spotify's "playing now" on Twitter bio.
 
 # usage
 1. Install selenium using pip
