@@ -13,7 +13,6 @@ load_dotenv()
 
 
 options = webdriver.FirefoxOptions()
-
 options.add_argument("--headless")
 
 driver = webdriver.Firefox(options=options)
@@ -74,7 +73,7 @@ def change_bio(playing_now):
             if (playing_now != ""):
                 bio_input.send_keys(Keys.CONTROL + "a")
                 bio_input.send_keys(Keys.DELETE)
-                bio_input.send_keys('🎶 ' + playing_now + "\n\n" + user_bio)
+                bio_input.send_keys('| 🎶 Now playing: ' + playing_now + " |\n\n" + user_bio)
             else:
                 bio_input.send_keys(Keys.CONTROL + "a")
                 bio_input.send_keys(Keys.DELETE)
@@ -107,8 +106,13 @@ def get_current_playing():
     if current_playing is None:
         return None
     
-    artist = current_playing["item"]["artists"][0]["name"]
-    song = current_playing["item"]["name"]
+    artist = ""
+    song = ""
+    try: 
+        artist = current_playing["item"]["artists"][0]["name"]
+        song = current_playing["item"]["name"]
+    except: 
+        return None
 
     return artist + " - " + song
 
@@ -126,6 +130,7 @@ def verify_currently_playing_and_update_username():
         if not erased:
             change_bio("")
             erased = True
+            last_played = ""
         return
     
     if currently_playing != current_playing_response:
