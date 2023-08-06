@@ -5,7 +5,8 @@ Script to show Spotify's "playing now" on Twitter bio.
 1. Install selenium using pip
 2. Install spotify using pip
 3. Install dotenv using pip
-4. Create an .env file on source folder and add the following values (alternatively, you can add them directly in your $PATH if you want to):
+4. Setup Geckodriver (it can be either on sames folder as the script or in your $PATH)
+5. Create an .env file on source folder and add the following values (alternatively, you can add them directly in your $PATH if you want to):
 ```
 TWITTER_USERNAME="your_twitter_username"
 TWITTER_PASSWORD="your_twitter_password"
